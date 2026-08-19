@@ -8,7 +8,9 @@
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6) ![License](https://img.shields.io/badge/License-MIT-46d39a) ![Runs on](https://img.shields.io/badge/runs%20on-your%20GPU-ff6a1a)
 
-[**▶ デモ・紹介ページ（曲が聴けます）**](https://claude.ai/code/artifact/a165b7db-e997-4514-b18b-fd076cfd3016)
+[**🌐 公式サイト（デモ曲が聴けます）**](https://forge-nanctaishikan-droids-projects.vercel.app) ・
+[導入ガイド](https://forge-nanctaishikan-droids-projects.vercel.app/setup) ・
+[必要スペック](https://forge-nanctaishikan-droids-projects.vercel.app/specs)
 
 </div>
 
@@ -89,6 +91,7 @@ npm run dev                        # → http://localhost:3939
 ## 🧩 構成
 
 ```
+site/                  … 紹介・導入サイト（Next.js / Vercel にデプロイ）
 app/
   music-studio/        … 生成UI（かんたん / フルカスタム, ライブラリ, アルバム）
   editor/[id]/         … マルチトラック・エディタ

@@ -1,0 +1,13 @@
+# 依存とビルド成果物
+/node_modules
+/.next
+/out
+
+# Vercel のローカル設定・トークン（絶対にコミットしない）
+.vercel
+.env*
+!.env.example
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
