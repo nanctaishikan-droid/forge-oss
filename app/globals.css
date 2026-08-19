@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* ダーク＋オレンジ（DAW/スタジオ調・the-svg参考） */
+  --bg: #0a0a0b;
+  --surface: #141416;
+  --surface-2: #1c1c1f;
+  --border: #2a2a2e;
+  --text: #ededf0;
+  --text-dim: #9a9aa2;
+  --accent: #f97316; /* orange 500 */
+  --accent-2: #fb923c; /* orange 400 */
+  --accent-soft: rgba(249, 115, 22, 0.14);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: ui-monospace, "SFMono-Regular", "Geist Mono", "JetBrains Mono", monospace;
+}
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2e;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a40;
+}
+
+/* range スライダー（オレンジ） */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 9999px;
+  background: #2a2a2e;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.4);
+}
+input[type="range"]:disabled::-webkit-slider-thumb {
+  background: #52525b;
+  box-shadow: none;
+}
+
+/* 選択/アクセント系のユーティリティ */
+.accent-orange {
+  accent-color: var(--accent);
+}

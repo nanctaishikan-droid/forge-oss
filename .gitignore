@@ -1,0 +1,15 @@
+/node_modules
+/.next
+/out
+# 実行時データ（フォルダは保持）
+/data/*
+!/data/.gitkeep
+# 大きな外部ツール（独立venv・クローンしたサーバー）
+/tools/sep-venv
+/tools/Irodori-TTS-Server
+*.tsbuildinfo
+next-env.d.ts
+# 環境固有・秘匿情報
+.env*.local
+# 生成音声を配信する ComfyUI output へのリンク
+/public/media

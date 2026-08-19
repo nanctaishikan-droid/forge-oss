@@ -1,0 +1,28 @@
+{
+  "name": "music-start-dayo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ローカルComfyUI(ACE-Step / Stable Audio Open)で動く自前Music Studio",
+  "scripts": {
+    "dev": "next dev -p 3939",
+    "build": "next build",
+    "start": "next start -p 3939",
+    "scheduler": "node scripts/scheduler.mjs",
+    "irodori": "cd tools/Irodori-TTS-Server && uv run --no-sync python -m irodori_openai_tts --host 127.0.0.1 --port 8088",
+    "test": "node --test lib/luster/test/mastering.test.mjs"
+  },
+  "dependencies": {
+    "next": "15.1.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.6.3"
+  }
+}
