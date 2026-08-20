@@ -43,6 +43,30 @@ git --version
 - FFmpeg が無い場合：Windows は `winget install Gyan.FFmpeg` または https://ffmpeg.org 。mac は `brew install ffmpeg`。Linux は `apt install ffmpeg`。
 - Node が古い/無い場合：https://nodejs.org（LTS）を案内。
 
+**ComfyUI のバージョンについて（実際にはまった点）:**
+
+使いたいモデルによって必要なバージョンが違います。古いままだと「ノードが出てこない」という形で詰まります。
+
+| 使いたいもの | 必要な ComfyUI |
+|---|---|
+| ACE-Step（曲の生成） | 0.30 以降 |
+| MiniMax-H3（動画） | 0.30 以降 |
+| MiniMax-Music3（長尺の曲・任意） | **0.33.1 以降** |
+
+更新は `update\update_comfyui.bat` が公式のやり方です。ただし **本体だけ更新すると `comfy_kitchen` などの Python パッケージが古いままで起動しなくなることがあります**（`AttributeError: module 'comfy_kitchen' has no attribute ...` というエラーが出ます）。
+
+その場合は、依存を丸ごと更新する（torch まで入れ替わってしまう）のではなく、`ComfyUI/requirements.txt` に書かれているバージョンだけを狙って入れ直すのが安全です。
+
+```bash
+# 何が変わるか先に確認する（torch が対象に入っていないことを確かめる）
+.\python_embeded\python.exe -m pip install --dry-run comfy-kitchen==0.2.31
+
+# 問題なければ実行
+.\python_embeded\python.exe -m pip install comfy-kitchen==0.2.31
+```
+
+更新の前に `ComfyUI/custom_nodes` と `ComfyUI/user` をコピーし、`git rev-parse HEAD` で現在のコミットを控えておくと、いつでも元に戻せます。
+
 **ComfyUI の確認：**
 ```bash
 curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8188/
